@@ -27,7 +27,7 @@ namespace MES_CAN_WPF
 
         private void MenuItem_Click(object sender, RoutedEventArgs e)
         {
-            if ((bool)Globalvariable.ConDiolg.ShowDialog())
+            if ((bool)GlobalVariable.ConDiolg.ShowDialog())
             {
 
             }

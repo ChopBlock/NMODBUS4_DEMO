@@ -1,0 +1,13 @@
+﻿1>------ 已启动全部重新生成: 项目: MES_CAN, 配置: Debug x86 ------
+1>D:\GGS\WeChat Files\wxid_d2u3pzuamtek21\FileStorage\File\2020-08\MES_CAN(2) - excell\MES_CAN\CAN_RECV.cs(1018,30,1018,33): warning CS0168: The variable 'EXP' is declared but never used
+1>D:\GGS\WeChat Files\wxid_d2u3pzuamtek21\FileStorage\File\2020-08\MES_CAN(2) - excell\MES_CAN\CAN_RECV.cs(1126,30,1126,33): warning CS0168: The variable 'exp' is declared but never used
+1>D:\GGS\WeChat Files\wxid_d2u3pzuamtek21\FileStorage\File\2020-08\MES_CAN(2) - excell\MES_CAN\CAN_RECV.cs(1582,38,1582,40): warning CS0168: The variable 'ex' is declared but never used
+1>D:\GGS\WeChat Files\wxid_d2u3pzuamtek21\FileStorage\File\2020-08\MES_CAN(2) - excell\MES_CAN\CAN_RECV.cs(1669,38,1669,40): warning CS0168: The variable 'ex' is declared but never used
+1>D:\GGS\WeChat Files\wxid_d2u3pzuamtek21\FileStorage\File\2020-08\MES_CAN(2) - excell\MES_CAN\Logic\CANOperate.cs(15,22,15,29): warning CS0414: The field 'CANOperate.bStatus' is assigned but its value is never used
+1>D:\GGS\WeChat Files\wxid_d2u3pzuamtek21\FileStorage\File\2020-08\MES_CAN(2) - excell\MES_CAN\Logic\CANOperate.cs(17,21,17,26): warning CS0414: The field 'CANOperate.count' is assigned but its value is never used
+1>D:\GGS\WeChat Files\wxid_d2u3pzuamtek21\FileStorage\File\2020-08\MES_CAN(2) - excell\MES_CAN\CAN_RECV.cs(69,22,69,37): warning CS0414: The field 'CAN_RECV.ReelCounterflag' is assigned but its value is never used
+1>D:\GGS\WeChat Files\wxid_d2u3pzuamtek21\FileStorage\File\2020-08\MES_CAN(2) - excell\MES_CAN\Logic\CANOperate.cs(38,21,38,26): warning CS0414: The field 'CANOperate.s61_c' is assigned but its value is never used
+1>D:\GGS\WeChat Files\wxid_d2u3pzuamtek21\FileStorage\File\2020-08\MES_CAN(2) - excell\MES_CAN\CAN_RECV.cs(73,13,73,17): warning CS0414: The field 'CAN_RECV.PASS' is assigned but its value is never used
+1>D:\GGS\WeChat Files\wxid_d2u3pzuamtek21\FileStorage\File\2020-08\MES_CAN(2) - excell\MES_CAN\Logic\CANOperate.cs(42,21,42,26): warning CS0414: The field 'CANOperate.s61_y' is assigned but its value is never used
+1>  MES_CAN -> D:\GGS\WeChat Files\wxid_d2u3pzuamtek21\FileStorage\File\2020-08\MES_CAN(2) - excell\MES_CAN\bin\x86\Debug\MES_CAN.dll
+========== 全部重新生成: 成功 1 个，失败 0 个，跳过 0 个 ==========

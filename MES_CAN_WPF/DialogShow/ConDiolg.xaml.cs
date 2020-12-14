@@ -22,7 +22,7 @@ namespace MES_CAN_WPF
         public ConDiolg()
         {
             InitializeComponent();
-
+            #region 初始化界面
             #region 设备索引号
             List<comombox> list = new List<comombox>();
             list.Add(new comombox { Name = "设备索引号0", Value = 0 });
@@ -63,7 +63,8 @@ namespace MES_CAN_WPF
             Comb_CANBaud.SelectedValuePath = "Value";
             Comb_CANBaud.SelectedValue = 500;
             #endregion
-            #region
+            #region 界面
+           
             list = new List<comombox>();
             list.Add(new comombox { Name = "CUSTOM", Value = 0 });
             list.Add(new comombox { Name="EXCL",Value=1});
@@ -73,7 +74,27 @@ namespace MES_CAN_WPF
             Comb_Target.SelectedValue = 0;
             #endregion
 
+
+            this.Bt_CON.IsEnabled = true;
+            this.Bt_DisCON.IsEnabled = false;
+            #endregion
+
+            this.connect += new conn(GlobalVariable.CANOperate.Open);
+            this.DisConnect += new DisConn(GlobalVariable.CANOperate.Close);
         }
+
+        public delegate int conn();
+        /// <summary>
+        /// 连接事件
+        /// </summary>
+        public event conn connect;
+
+        public delegate bool DisConn();
+        /// <summary>
+        /// 取消连接
+        /// </summary>
+        public event DisConn DisConnect;
+
         /// <summary>
         /// combox类
         /// </summary>
@@ -86,11 +107,20 @@ namespace MES_CAN_WPF
 
         private void Bt_CON_Click(object sender, RoutedEventArgs e)
         {
-
+            if (connect() > 0)
+            {
+                this.Bt_CON.IsEnabled = false;
+                this.Bt_DisCON.IsEnabled = true;
+            }
         }
 
         private void Bt_DisCON_Click(object sender, RoutedEventArgs e)
         {
+            if (DisConnect())
+            {
+                this.Bt_CON.IsEnabled = true;
+                this.Bt_DisCON.IsEnabled = false;
+            }
 
         }
     }
