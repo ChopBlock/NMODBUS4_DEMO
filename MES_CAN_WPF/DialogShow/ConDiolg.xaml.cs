@@ -23,5 +23,10 @@ namespace MES_CAN_WPF
         {
             InitializeComponent();
         }
+
+        private void Bt_CON_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

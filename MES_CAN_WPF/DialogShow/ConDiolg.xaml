@@ -28,7 +28,7 @@
             </ComboBox>
         </Grid>
         <Grid Grid.Column="1">
-            <Button x:Name="Bt_CON" Content="连接" VerticalAlignment="Top" Margin="5,10,5,3"></Button>
+            <Button x:Name="Bt_CON" Content="连接" VerticalAlignment="Top" Margin="5,10,5,3" Click="Bt_CON_Click"></Button>
             <Button x:Name="Bt_DisCON" Content="断开" VerticalAlignment="Top" Margin="5,40,5,3"></Button>
         </Grid>
     </Grid>
