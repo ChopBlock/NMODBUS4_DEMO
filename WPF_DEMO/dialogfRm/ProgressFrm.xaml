@@ -1,0 +1,12 @@
+﻿<Window x:Class="WPF_DEMO.ProgressFrm"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPF_DEMO"
+        mc:Ignorable="d"
+        Title="ProgressFrm" Height="100" Width="500"  WindowStartupLocation="CenterScreen" WindowStyle="ToolWindow"  >
+    <Grid x:Name="Progr_Grid" Loaded="Grid_Loaded">
+        <ProgressBar x:Name="Prgress"   Maximum ="{Binding Maxmum}" Minimum="{Binding Minimum}" Value="{Binding  Vale}" Margin="10,20,10,20" ValueChanged="Prgress_ValueChanged"    ></ProgressBar>
+    </Grid>
+</Window>

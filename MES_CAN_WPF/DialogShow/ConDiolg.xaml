@@ -1,0 +1,35 @@
+﻿<Window x:Class="MES_CAN_WPF.ConDiolg"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MES_CAN_WPF"
+        mc:Ignorable="d"
+        Title="ConDiolg" Height="300" Width="300" BorderBrush="Black" BorderThickness="5,5,5,5"  ResizeMode="NoResize" WindowStyle="SingleBorderWindow">
+    <Grid Background="#FFCDC9C9">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.6*"></ColumnDefinition>
+            <ColumnDefinition Width="0.4*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid Grid.Column="0">
+            <TextBlock Text="设备索引号:"  Margin="10,10,10,10" HorizontalAlignment="Left" VerticalAlignment="Top" Width="90"></TextBlock>
+            <ComboBox x:Name="Comb_CANIdx" Margin="10,30,0,0"  HorizontalAlignment="Left" VerticalAlignment="Top" Width="130" ></ComboBox>
+            <TextBlock Text="CAN通道号:"  Margin="10,60,10,10" HorizontalAlignment="Left" VerticalAlignment="Top" Width="90"></TextBlock>
+            <ComboBox x:Name="Comb_CANPORTS" Margin="10,80,0,0"  HorizontalAlignment="Left" VerticalAlignment="Top" Width="130" ></ComboBox>
+
+            <TextBlock Text="CAN波特率:"  Margin="10,110,10,10" HorizontalAlignment="Left" VerticalAlignment="Top" Width="90"></TextBlock>
+            <ComboBox x:Name="Comb_CANBaud" Margin="10,130,0,0"  HorizontalAlignment="Left" VerticalAlignment="Top" Width="130" ></ComboBox>
+
+            <TextBlock Text="目标设备:"  Margin="10,160,10,10" HorizontalAlignment="Left" VerticalAlignment="Top" Width="90"></TextBlock>
+            <ComboBox x:Name="Comb_CANFIX" Margin="10,180,0,0"   HorizontalAlignment="Left" VerticalAlignment="Top" Width="130" >
+                <ComboBoxItem  Content="BCU"></ComboBoxItem>
+                <ComboBoxItem  Content="BMU"></ComboBoxItem>
+                <ComboBoxItem  Content="NEW"></ComboBoxItem>
+            </ComboBox>
+        </Grid>
+        <Grid Grid.Column="1">
+            <Button x:Name="Bt_CON" Content="连接" VerticalAlignment="Top" Margin="5,10,5,3"></Button>
+            <Button x:Name="Bt_DisCON" Content="断开" VerticalAlignment="Top" Margin="5,40,5,3"></Button>
+        </Grid>
+    </Grid>
+</Window>

@@ -1,0 +1,133 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPF_DEMO"
+        xmlns:PropertyEditing="clr-namespace:Microsoft.Windows.Design.PropertyEditing;assembly=Microsoft.Windows.Design" x:Class="WPF_DEMO.MODBUS_WPF"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="700" Width="1425"  
+        WindowStartupLocation="CenterScreen"   
+        FontSize="14" Icon="Resources/modbus.ico" Closed="Window_Closed"
+        >
+    <Window.Resources>
+        <Style TargetType="{x:Type MenuItem}" >
+            <Style.Triggers >
+
+                <EventTrigger  RoutedEvent="Mouse.MouseEnter">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation
+                                          Duration="0:0:0.2"
+                                          Storyboard.TargetProperty="FontSize"
+                                          To="15"  />
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+                <EventTrigger  RoutedEvent="Mouse.MouseLeave">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation
+                                          Duration="0:0:0.2"
+                                          Storyboard.TargetProperty="FontSize"
+                                          To="12"  />
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+            </Style.Triggers>
+
+        </Style>
+        <Style x:Key="iconfont">
+            <Setter Property="TextElement.FontFamily" Value="pack://application:,,,/Resources/#iconfont"/>
+
+            <Setter Property="TextElement.FontSize" Value="14" />
+
+
+
+            <Style.Triggers >
+
+                <EventTrigger  RoutedEvent="Mouse.MouseEnter">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation
+                                          Duration="0:0:0.2"
+                                          Storyboard.TargetProperty="FontSize"
+                                          To="15" 
+                                   />
+
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+                <EventTrigger  RoutedEvent="Mouse.MouseLeave">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation
+                                          Duration="0:0:0.2"
+                                          Storyboard.TargetProperty="FontSize"
+                                          To="14"  />
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+            </Style.Triggers>
+        </Style>
+    </Window.Resources>
+    <Grid x:Name="Main_Grid"   >
+
+        <Menu  x:Name="Men_con" Height="35" Style="{StaticResource iconfont}"  VerticalAlignment="Top" Background="{DynamicResource {x:Static SystemColors.InactiveBorderBrushKey}}" FontFamily="iconfont"  >
+            <MenuItem Icon="&#xE9AF;"  Header="connection" Style="{StaticResource iconfont}"  Height="35" HorizontalContentAlignment="Left" FontFamily="iconfont" >
+                <MenuItem x:Name="bt_con" Style="{StaticResource iconfont}"   Icon="&#xE659;" Header="Connect" HorizontalAlignment="Left" Click="bt_con_Click" FontFamily="iconfont" />
+                <MenuItem x:Name="bt_con_Abort" Style="{StaticResource iconfont}" Icon="&#xE65A;"  Header="DisConnect" HorizontalAlignment="Left"  Click="bt_con_Abort_Click" FontFamily="iconfont"/>
+            </MenuItem>
+
+            <MenuItem Icon="&#xE6F3;"  Header="Dt_Load" Style="{StaticResource iconfont}"  Height="35" HorizontalContentAlignment="Left" FontFamily="iconfont"  >
+                <MenuItem x:Name="MeItm_dt" Style="{StaticResource iconfont}"   Icon="&#xE6EB;" Header="Convert_dt" HorizontalAlignment="Left" Click="MeItm_dt_Click" />
+                <MenuItem x:Name="MeItm_dt_Path" Style="{StaticResource iconfont}" Icon="&#xE617;"  Header="" HorizontalAlignment="Left" />
+            </MenuItem>
+
+        </Menu>
+
+        <Grid x:Name="Grid_Dgv" Margin="3,90,0,0" Width="800" HorizontalAlignment="Left">
+
+            <DataGrid  x:Name="Excell_DGV"  Width="Auto"  AutoGenerateColumns="False" BorderBrush="#FFDC9B9B"   >
+
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="NO." Binding="{Binding NO}"/>
+                    <DataGridTextColumn Header="SLAVE_ID" Binding="{Binding SLAVE_ID}"/>
+                    <DataGridTextColumn Header="FUNCTION" Binding="{Binding FUNCTION}"/>
+                    <DataGridTextColumn Header="STRATADDRESS" Binding="{Binding STRATADDRESS}"/>
+                    <DataGridTextColumn Header="FUNCTION" Binding="{Binding FUNCTION}"/>
+                    <DataGridTextColumn Header="TYPE" Binding="{Binding TYPE}"/>
+                    <DataGridTextColumn Header="LENTH" Binding="{Binding LENTH}"/>
+                    <DataGridTextColumn Header="ARRAY[Ushort]" Width="500"  Binding="{Binding ARRAY}"/>
+
+                </DataGrid.Columns>
+            </DataGrid>
+
+        </Grid>
+
+        <Grid   Margin="803,90,10,3">
+            <ListView x:Name="LstView"   Margin="3,0,3,0" GiveFeedback="LstView_GiveFeedback" LayoutUpdated="LstView_LayoutUpdated" BorderBrush="#FF1E81B8" >
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Header="No" Width="30" DisplayMemberBinding="{Binding No}"/>
+                        <GridViewColumn Header="Time" Width="200" DisplayMemberBinding="{Binding Time}"/>
+                        <GridViewColumn  Header="Value" Width="500" DisplayMemberBinding="{Binding Value}"/>
+                    </GridView>
+                </ListView.View>
+            </ListView>
+        </Grid>
+
+
+
+
+
+
+       
+
+
+
+
+
+
+    </Grid>
+</Window>
