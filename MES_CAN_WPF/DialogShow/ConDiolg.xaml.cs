@@ -22,9 +22,74 @@ namespace MES_CAN_WPF
         public ConDiolg()
         {
             InitializeComponent();
+
+            #region 设备索引号
+            List<comombox> list = new List<comombox>();
+            list.Add(new comombox { Name = "设备索引号0", Value = 0 });
+            list.Add(new comombox { Name = "设备索引号1", Value = 1 });
+            list.Add(new comombox { Name = "设备索引号2", Value = 2 });
+            list.Add(new comombox { Name = "设备索引号3", Value = 3 });
+            list.Add(new comombox { Name = "设备索引号4", Value = 4 });
+            list.Add(new comombox { Name = "设备索引号5", Value = 5 });
+            list.Add(new comombox { Name = "设备索引号6", Value = 6 });
+            list.Add(new comombox { Name = "设备索引号7", Value = 7 });
+            Comb_FixIdx.ItemsSource = list;
+            Comb_FixIdx.DisplayMemberPath = "Name";
+            Comb_FixIdx.SelectedValuePath = "Value";
+            Comb_FixIdx.SelectedValue = 0;
+            #endregion
+            #region CAN通道号
+            list = new List<comombox>();
+            list.Add(new comombox { Name = "通道一", Value = 0 });
+            list.Add(new comombox { Name = "通道2", Value = 1 });
+            Comb_CANPass.ItemsSource = list;
+            Comb_CANPass.DisplayMemberPath = "Name";
+            Comb_CANPass.SelectedValuePath = "Value";
+            Comb_CANPass.SelectedValue = 0;
+            #endregion
+            #region CAN波特率
+            list = new List<comombox>();
+            list.Add(new comombox { Name = "5 Baud", Value = 5 });
+            list.Add(new comombox { Name = "10 Baud", Value = 10 });
+            list.Add(new comombox { Name = "20 Baud", Value = 20 });
+            list.Add(new comombox { Name = "50 Baud", Value = 50 });
+            list.Add(new comombox { Name = "100 Baud", Value = 100 });
+            list.Add(new comombox { Name = "125 Baud", Value = 125 });
+            list.Add(new comombox { Name = "250 Baud", Value = 250 });
+            list.Add(new comombox { Name = "500 Baud", Value = 500 });
+            list.Add(new comombox { Name = "800 Baud", Value = 800 });
+            Comb_CANBaud.ItemsSource = list;
+            Comb_CANBaud.DisplayMemberPath = "Name";
+            Comb_CANBaud.SelectedValuePath = "Value";
+            Comb_CANBaud.SelectedValue = 500;
+            #endregion
+            #region
+            list = new List<comombox>();
+            list.Add(new comombox { Name = "CUSTOM", Value = 0 });
+            list.Add(new comombox { Name="EXCL",Value=1});
+            Comb_Target.ItemsSource = list;
+            Comb_Target.DisplayMemberPath = "Name";
+            Comb_Target.SelectedValuePath = "Value";
+            Comb_Target.SelectedValue = 0;
+            #endregion
+
         }
+        /// <summary>
+        /// combox类
+        /// </summary>
+        private class comombox
+        {
+            public string Name { get; set; }
+            public int Value { get; set; }
+        }
+           
 
         private void Bt_CON_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Bt_DisCON_Click(object sender, RoutedEventArgs e)
         {
 
         }
