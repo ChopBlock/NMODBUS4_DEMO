@@ -67,16 +67,20 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="CaApI\CANAPI.cs" />
+    <Compile Include="CaApI\CANOperate.cs" />
     <Compile Include="DialogShow\ConDiolg.xaml.cs">
       <DependentUpon>ConDiolg.xaml</DependentUpon>
     </Compile>
-    <Compile Include="globalvariable\Globalvariable.cs" />
+    <Compile Include="globalvariable\GlobalVariable.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Model\NotificationObject.cs" />
+    <Compile Include="Model\StatusModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>

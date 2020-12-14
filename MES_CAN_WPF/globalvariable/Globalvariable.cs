@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MES_CAN_WPF
 {
-    public static class Globalvariable
+    public static class GlobalVariable
     {
         /// <summary>
         /// 连接界面
