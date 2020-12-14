@@ -15,6 +15,9 @@ namespace MES_CAN_WPF
         /// </summary>
         public static ConDiolg ConDiolg { get {return new ConDiolg(); }  }
         public static CANOperate CANOperate = new CANOperate();
+        public static StatusModel StatusModel = new StatusModel();
+
+        public static Program_Dialog Program_Dialog = new Program_Dialog();
 
         internal static uint CANBaudRate;
         internal static int CANIndex;
@@ -33,9 +36,9 @@ namespace MES_CAN_WPF
             MSG.Add(DateTime.Now.ToString() + "\t" + ms);
         }
 
-     
 
-        
+
+        public static string File_Path = string.Empty;
 
        
     }

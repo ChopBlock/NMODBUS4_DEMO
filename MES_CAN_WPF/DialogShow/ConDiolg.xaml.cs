@@ -107,6 +107,10 @@ namespace MES_CAN_WPF
 
         private void Bt_CON_Click(object sender, RoutedEventArgs e)
         {
+            GlobalVariable.CANBaudRate = Convert.ToUInt32( Comb_CANBaud.SelectedValue.ToString());
+            GlobalVariable.CANIndex = Convert.ToInt32(Comb_CANPass.SelectedValue.ToString());
+            GlobalVariable.DeviceIndex = Convert.ToInt32(Comb_FixIdx.SelectedValue.ToString());
+            GlobalVariable.DeviceType = Convert.ToInt32(Comb_Target.SelectedValue.ToString());
             if (connect() > 0)
             {
                 this.Bt_CON.IsEnabled = false;
@@ -116,6 +120,7 @@ namespace MES_CAN_WPF
 
         private void Bt_DisCON_Click(object sender, RoutedEventArgs e)
         {
+          
             if (DisConnect())
             {
                 this.Bt_CON.IsEnabled = true;

@@ -35,7 +35,7 @@ namespace MES_CAN_WPF
                 {
                     if (CANAPI.FD_InitCAN((uint)GlobalVariable.DeviceType, (uint)GlobalVariable.DeviceIndex, (uint)GlobalVariable.CANIndex, ref initConfig) != CANAPI.STATUS_OK)
                     {
-                        CANAPI.FD_CloseDevice((uint)GlobalVariable.DeviceType, (uint)GlobalVariable.DeviceIndex);
+                     CANAPI.FD_CloseDevice((uint)GlobalVariable.DeviceType, (uint)GlobalVariable.DeviceIndex);
                     }
                     CANAPI.FD_ResetCAN((uint)GlobalVariable.DeviceType, (uint)GlobalVariable.DeviceIndex, (uint)GlobalVariable.CANIndex);
                     CANAPI.FD_CloseDevice((uint)GlobalVariable.DeviceType, (uint)GlobalVariable.DeviceIndex);
@@ -46,11 +46,12 @@ namespace MES_CAN_WPF
             }
             catch (Exception ex)
             {
+                GlobalVariable.MSG_Show(ex.Message);
                 return false;
             }
 
         }
-
+        
         public int Open()
         {
             try
@@ -59,15 +60,18 @@ namespace MES_CAN_WPF
                 initConfig.BaudRate = GlobalVariable.CANBaudRate;
                 if (CANAPI.FD_OpenDevice((uint)GlobalVariable.DeviceType, (uint)GlobalVariable.DeviceIndex, 0) != CANAPI.STATUS_OK)
                 {
+                    GlobalVariable.MSG_Show("打开设备失败!...");
                     return 0;
                 }
                 if (CANAPI.FD_InitCAN((uint)GlobalVariable.DeviceType, (uint)GlobalVariable.DeviceIndex, (uint)GlobalVariable.CANIndex, ref initConfig) != CANAPI.STATUS_OK)
                 {
+                    GlobalVariable.MSG_Show("初始化设备失败!...");
                     CANAPI.FD_CloseDevice((uint)GlobalVariable.DeviceType, (uint)GlobalVariable.DeviceIndex);
                     return 0;
                 }
                 if (CANAPI.FD_StartCAN((uint)GlobalVariable.DeviceType, (uint)GlobalVariable.DeviceIndex, (uint)GlobalVariable.CANIndex) != CANAPI.STATUS_OK)
                 {
+                    GlobalVariable.MSG_Show("开启设备失败!...");
                     CANAPI.FD_CloseDevice((uint)GlobalVariable.DeviceType, (uint)GlobalVariable.DeviceIndex);
                     return 0;
                 }
@@ -79,7 +83,7 @@ namespace MES_CAN_WPF
             catch (Exception ex)
             {
                 this.Connected = false;
-             
+                GlobalVariable.MSG_Show(ex.Message);
                 return 0;
             }
         }

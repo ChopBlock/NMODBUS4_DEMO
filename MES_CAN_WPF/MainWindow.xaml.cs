@@ -23,6 +23,21 @@ namespace MES_CAN_WPF
         public MainWindow()
         {
             InitializeComponent();
+
+            GlobalVariable.StatusModel.isCheckResult = 1;
+
+            #region 数据绑定
+            this.List_MSG.ItemsSource = GlobalVariable.MSG;
+            this.Can_layout.DataContext = GlobalVariable.StatusModel;
+            #endregion
+
+            GlobalVariable.MSG.CollectionChanged += MSG_CollectionChanged;
+        }
+
+        private void MSG_CollectionChanged(object sender, System.Collections.Specialized.NotifyCollectionChangedEventArgs e)
+        {
+            this.Scrollv_MSG.ScrollToEnd();
+          
         }
 
         private void MenuItem_Click(object sender, RoutedEventArgs e)
@@ -31,6 +46,11 @@ namespace MES_CAN_WPF
             {
 
             }
+        }
+
+        private void MenuItem_Click_1(object sender, RoutedEventArgs e)
+        {
+            GlobalVariable.Program_Dialog.ShowDialog();
         }
     }
 }

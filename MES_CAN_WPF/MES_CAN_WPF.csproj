@@ -34,6 +34,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="PresentationFramework.Aero2" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -59,6 +60,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="DialogShow\Program_Dialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -71,6 +76,9 @@
     <Compile Include="CaApI\CANOperate.cs" />
     <Compile Include="DialogShow\ConDiolg.xaml.cs">
       <DependentUpon>ConDiolg.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DialogShow\Program_Dialog.xaml.cs">
+      <DependentUpon>Program_Dialog.xaml</DependentUpon>
     </Compile>
     <Compile Include="globalvariable\GlobalVariable.cs" />
     <Compile Include="MainWindow.xaml.cs">
